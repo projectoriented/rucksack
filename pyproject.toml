@@ -5,13 +5,13 @@ description = ""
 authors = ["Mei Wu <25568561+projectoriented@users.noreply.github.com>"]
 
 [tool.poetry.scripts]
-rucksack = "rucksack.cli.base:base_command"
+rucksack = "rucksack.cli.base:cli_base"
 
 [tool.poetry.dependencies]
 python = "^3.9"
 click = "^8.0.3"
 pydantic = "^1.9.0"
-toml = "^0.10.2"
+tomlkit = "^0.9.0"
 
 [tool.poetry.dev-dependencies]
 
