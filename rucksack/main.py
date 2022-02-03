@@ -1,6 +1,7 @@
 import sys
-from rucksack.cli.base import cli_base
+
 
 if __name__ == "__main__":
-    sys.exit(cli_base())
+    from rucksack.cli.base import cli_base
 
+    sys.exit(cli_base())
