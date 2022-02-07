@@ -10,7 +10,7 @@ ENV POETRY_VERSION=1.1.12
 # use latest pip
 RUN pip install --upgrade pip
 
-# system dependencies
+# install poetry
 RUN pip install poetry==$POETRY_VERSION
 
 # cache required files
