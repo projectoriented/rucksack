@@ -13,9 +13,12 @@ RUN pip install --upgrade pip
 # install poetry
 RUN pip install poetry==$POETRY_VERSION
 
-# cache required files
+# set working directory
 WORKDIR /app
-COPY . /app
 
-# intialize project:
-RUN poetry config virtualenvs.create false && poetry install --no-interaction --no-ansi
+# copy files to container workdir for build context
+COPY . .
+
+# intialize project
+RUN poetry config virtualenvs.create false
+RUN poetry install --no-interaction --no-ansi
