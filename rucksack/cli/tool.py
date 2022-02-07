@@ -25,7 +25,7 @@ def show():
 def vcfanno(base_toml, resource_dir):
     """Stage files"""
     with open(base_toml) as f:
-        for i, line in enumerate(f):
+        for line in f:
             if line.startswith("file"):
                 reference_file = parse(line)["file"]
                 absolute_path = prepend_path(reference_file, resource_dir)
