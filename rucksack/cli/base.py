@@ -7,7 +7,7 @@ import logging
 import click
 
 from .tool import tool
-from rucksack.__version__ import __version__
+from rucksack import __version__
 
 LOG = logging.getLogger(__name__)
 

@@ -1,11 +1,11 @@
-FROM python:3.9-slim
+FROM python:3.10-slim
 
-LABEL base_image="python:3.9-slim"
+LABEL base_image="python:3.10-slim"
 LABEL about.home="https://github.com/projectoriented/rucksack"
 LABEL about.tags="bioinformatics, preprocessing, utility"
 
 # poetry version
-ENV POETRY_VERSION=1.1.12
+ENV POETRY_VERSION=1.1.13
 
 # use latest pip
 RUN pip install --upgrade pip
