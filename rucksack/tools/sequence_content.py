@@ -52,10 +52,14 @@ fasta_dict = {}
 q_bed = QUERY_BED
 if len(sys.argv) > 2:
     for fasta in sys.argv[2:]:
-        print(f"Currently processing: {os.path.basename(fasta)}")
+        bn=os.path.basename(fasta)
+        print(f"Currently processing: {bn}")
         fasta_file = subset_fasta(q_bed, fasta)
-        fasta_tuple = read_fasta(fasta_file)
-        fasta_dict.update(get_fasta_dict(fasta_tuple, fasta))
+        try:
+            fasta_tuple = read_fasta(fasta_file)
+            fasta_dict.update(get_fasta_dict(fasta_tuple, fasta))
+        except ValueError:
+            print(f"Skipping {bn}")
 
 df = pd.DataFrame.from_dict(fasta_dict, orient='columns')
 df = df.apply(lambda x: round(x/df.sum(axis=0), 2), axis=1)
